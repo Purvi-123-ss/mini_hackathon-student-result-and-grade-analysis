@@ -6,25 +6,33 @@ int main() {
     char grade;
     char name [50];
 
-    printf("Enter number of students: ");
+    printf("Enter Number of Students: ");
     scanf("%d", &n);
 
     for (i = 1; i <= n; i++) {
         printf("\n--- Student %d ---\n", i);
         total = 0;
-        printf ("enter name");
-        scanf ("%s",&name);
+        printf ("Enter name:");
+        scanf ("%49s",name);
 
         
         for (j = 1; j <= 5; j++) {
             printf("Enter marks for Subject %d: ", j);
             scanf("%f", &marks);
             total += marks;
-        }
 
-    
-        percentage = total / 5.0;
+                if(marks>100 || marks<0) {
+                    printf("Marks entered are invalid\n");
+                }
+                
+                if(total< 0 || total>500) {
+                    printf("Invalid total\n");
+                    break;
+                 }
 
+            }
+        
+        percentage= total /5.0;
         
         if (percentage >= 90) {
             grade = 'A';
@@ -38,7 +46,6 @@ int main() {
             grade = 'F';
         }
 
-    
         printf("\nResult for Student %d:\n", i);
         printf("Total Marks : %.2f / 500\n", total);
         printf("Percentage  : %.2f%%\n", percentage);
