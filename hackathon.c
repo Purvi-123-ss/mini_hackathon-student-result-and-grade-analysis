@@ -13,7 +13,7 @@ int main() {
         printf("\n--- Student %d ---\n", i);
         total = 0;
         printf ("enter name");
-        scanf ("%s",name);
+        scanf ("%s",&name);
 
         
         for (j = 1; j <= 5; j++) {
